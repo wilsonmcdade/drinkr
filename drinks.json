@@ -4,17 +4,17 @@
 		"title": "General"
 	}, 
 	{
-		"type"; "numeric",
+		"type": "numeric",
 		"title": "Pump Speed",
 		"desc": "How fast should the pump go, on a scale from (slow) 0-5 (fast)",
-		"section": "pump",
-		"key": "pmpspd"
+		"section": "general",
+		"key": "speed"
 	},
 	{
 		"type": "bool",
 		"title": "Verbose Logging",
 		"desc": "More logs",
-		"section": "debug",
+		"section": "general",
 		"key": "debug"
 	},
 	{
