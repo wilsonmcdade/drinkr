@@ -1,0 +1,76 @@
+{
+	{
+		"type": "title",
+		"title": "General"
+	}, 
+	{
+		"type"; "numeric",
+		"title": "Pump Speed",
+		"desc": "How fast should the pump go, on a scale from (slow) 0-5 (fast)",
+		"section": "pump",
+		"key": "pmpspd"
+	},
+	{
+		"type": "bool",
+		"title": "Verbose Logging",
+		"desc": "More logs",
+		"section": "debug",
+		"key": "debug"
+	},
+	{
+		"type": "title",
+		"title": "Drinks"
+	},
+	{
+		"type": "bool",
+		"title": "Pump 1 Enabled",
+		"desc": "Is pump 1 enabled?",
+		"section": "pump1",
+		"key": "enable"
+	{
+		"type": "string",
+		"title": "Pump 1 Name",
+		"desc": "What comes out of pump 1?",
+		"section": "pump1",
+		"key": "name"
+	},
+	{
+		"type": "bool",
+		"title": "Pump 2 Enabled",
+		"desc": "Is pump 2 enabled?",
+		"section": "pump2",
+		"key": "enable"
+	{
+		"type": "string",
+		"title": "Pump 2 Name",
+		"desc": "What comes out of pump 2?",
+		"section": "pump2",
+		"key": "name"
+	},
+	{
+		"type": "bool",
+		"title": "Pump 3 Enabled",
+		"desc": "Is pump 3 enabled?",
+		"section": "pump3",
+		"key": "enable"
+	{
+		"type": "string",
+		"title": "Pump 3 Name",
+		"desc": "What comes out of pump 3?",
+		"section": "pump3",
+		"key": "name"
+	},
+	{
+		"type": "bool",
+		"title": "Pump 4 Enabled",
+		"desc": "Is pump 4 enabled?",
+		"section": "pump3",
+		"key": "enable"
+	{
+		"type": "string",
+		"title": "Pump 4 Name",
+		"desc": "What comes out of pump 4?",
+		"section": "pump4",
+		"key": "name"
+	}
+}
