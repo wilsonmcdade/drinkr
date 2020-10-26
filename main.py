@@ -18,6 +18,7 @@ from kivy.graphics import Color
 from kivy.config import Config, ConfigParser
 from kivy.uix.settings import SettingsWithSidebar
 from kivy.lang.builder import Builder
+from kivy.core.window import Window
 
 #global initialization
 dutycycle = 0.5
@@ -53,27 +54,14 @@ class drinkr(App):
         root = Builder.load_file('drinkr.kv')
         
         labels = root.ids
-        print(labels)
-        print(config)
         idx = 1
         for labeled, label in labels.items():
-
-            print(labeled)
-            print(label)
-            print(idx)
             label.text = self.config.get(str(idx),'name')
             idx += 1
 
-        return root
+        Window.clearcolor = (.85,.85,.85,1)
 
-    def pump(num):
-        if num in pumppins:
-            pumpsig[int(num)](*pumpsig[1:])
-            logging.info('Pumping')
-            logging.debug('Pumping pump %i', num)
-        else:
-            logging.info('Num not in Pumps')
-            logging.debug('Pump %i not in pumps list', num)
+        return root
 
     def build_config(self, config):
         config.setdefaults(
@@ -101,7 +89,16 @@ class drinkr(App):
                     'enable':1,
                     'name':'Drink 4'
                     })
-    
+ 
+    def pump(self,num):
+        if str(num) in pumppins.keys():
+            pumpsig[int(num)][0](*pumpsig[int(num)][1:])
+            logging.info('Pumping')
+            logging.debug('Pumping pump %i', num)
+        else:
+            logging.info('Num not in Pumps: %i',num)
+            logging.debug('Pump %i not in pumps list', num)
+   
     #at some point make a settings button and call this
     def build_settings(self,settings):
         settings.add_json_panel('Settings', self.config, 'drinks.json')

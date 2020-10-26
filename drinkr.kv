@@ -1,36 +1,53 @@
+#: import pump main.pump
 GridLayout:
 	cols: 2
 	spacing: 10
 	width: 600
 	GridLayout:
+		padding: 10
 		spacing: 5
 		width: 200
 		rows: 1
 		Button:
+			background_normal: ''
+			background_color: .22, .30, .28, 1
+			border: 10,10,10,10
 			width: 10
 			text: 'Drink1'
 			on_press: app.pump(1)
 			id: 1
 		Button:
+			background_normal: ''
+			background_color: .22, .30, .28, 1
 			width: 50
 			text: 'Drink2'
 			on_press: app.pump(2)
 			id: 2
 		Button:
+			background_normal: ''
+			background_color: .22, .30, .28, 1
 			text: 'Drink3'
 			on_press: app.pump(3)
 			id: 3
 		Button:
+			background_normal: ''
+			background_color: .22, .30, .28, 1
 			text: 'Drink4'
 			on_press: app.pump(4)
 			id: 4
 
-	BoxLayout:
-		orientation: 'vertical'
-		size_hint_x:None
+	FloatLayout:
+		size_hint: (None, None)
 		Button:
+			background_normal: ''
+			background_color: .22, .30, .28, 1
 			text: 'Settings'
-			size: (100,100)
-			size_hint: (None, None)
+			size: 100,100
+			pos: 690,370
 			on_release: app.open_settings()
+		Image:
+			pos: 690, 10
+			padding: 200
+			source: 'logo.png'
+			size: self.norm_image_size
 	
