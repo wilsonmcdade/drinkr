@@ -27,6 +27,7 @@
 		"desc": "Is pump 1 enabled?",
 		"section": "1",
 		"key": "enable"
+	},
 	{
 		"type": "string",
 		"title": "Pump 1 Name",
@@ -40,6 +41,7 @@
 		"desc": "Is pump 2 enabled?",
 		"section": "2",
 		"key": "enable"
+	},
 	{
 		"type": "string",
 		"title": "Pump 2 Name",
@@ -53,6 +55,7 @@
 		"desc": "Is pump 3 enabled?",
 		"section": "3",
 		"key": "enable"
+	},
 	{
 		"type": "string",
 		"title": "Pump 3 Name",
@@ -66,6 +69,7 @@
 		"desc": "Is pump 4 enabled?",
 		"section": "4",
 		"key": "enable"
+	},
 	{
 		"type": "string",
 		"title": "Pump 4 Name",
