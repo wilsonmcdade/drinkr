@@ -5,6 +5,8 @@
 import RPi.GPIO as GPIO
 import datetime
 import logging
+import os
+import sys
 
 # kivy imports
 import kivy
@@ -37,15 +39,6 @@ for pump in pumppins.values():
 pumpsig = []
 for pump in pumppins.values():
     pumpsig.append((GPIO.PWM,pump,0.05))
-    
-def pump(num):
-    if num in pumppins:
-        pumpsig[int(num)](*pumpsig[1:])
-        logging.info('Pumping')
-        logging.debug('Pumping pump %i', num)
-    else:
-        logging.info('Num not in Pumps')
-        logging.debug('Pump %i not in pumps list', num)
 
 def log_setup():
     logging.basicConfig(filename='drinkr.log', filemode='w', format='%(asctime)s - %(levelname)s - %(message)s')
@@ -72,6 +65,15 @@ class drinkr(App):
             idx += 1
 
         return root
+
+    def pump(num):
+        if num in pumppins:
+            pumpsig[int(num)](*pumpsig[1:])
+            logging.info('Pumping')
+            logging.debug('Pumping pump %i', num)
+        else:
+            logging.info('Num not in Pumps')
+            logging.debug('Pump %i not in pumps list', num)
 
     def build_config(self, config):
         config.setdefaults(
@@ -105,7 +107,7 @@ class drinkr(App):
         settings.add_json_panel('Settings', self.config, 'drinks.json')
 
     def on_config_change(self, config, section, key, value):
-        if (section not in pumppins.values()) or (section != 'general'):
+        if (section not in pumppins.keys()) or (section != 'general'):
             logging.info('Something went wrong.')
             logging.debug('Config section not valid: Section: %s, Key: %s, Value: %s',section,key,value)
         else :
@@ -122,9 +124,13 @@ class drinkr(App):
                         logging.setLevel('INFO')
                     else:
                         logging.setLevel('DEBUG')
-
+        
     def close_settings(self, settings=None):
-        super(MyApp, self).close_settings(settings)
+        super(drinkr, self).close_settings(settings)
+        print(f'exec: {sys.executable} {["python"] + sys.argv}')
+        os.execvp(sys.executable, ['python'] + sys.argv)
+
+
 
 if __name__ == "__main__":
     log_setup()

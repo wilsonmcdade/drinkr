@@ -1,31 +1,36 @@
-BoxLayout:
-	orientation: 'horizontal'
-	BoxLayout:
-		width: 600
-		orientation: 'horizontal'
+GridLayout:
+	cols: 2
+	spacing: 10
+	width: 600
+	GridLayout:
+		spacing: 5
+		width: 200
+		rows: 1
 		Button:
+			width: 10
 			text: 'Drink1'
-			on_press: pump(1)
+			on_press: app.pump(1)
 			id: 1
 		Button:
+			width: 50
 			text: 'Drink2'
-			on_press: pump(2)
+			on_press: app.pump(2)
 			id: 2
 		Button:
 			text: 'Drink3'
-			on_press: pump(3)
+			on_press: app.pump(3)
 			id: 3
 		Button:
 			text: 'Drink4'
-			on_press: pump(4)
+			on_press: app.pump(4)
 			id: 4
 
-	GridLayout:
-		cols: 1
-		rows: 2
+	BoxLayout:
+		orientation: 'vertical'
+		size_hint_x:None
 		Button:
 			text: 'Settings'
+			size: (100,100)
+			size_hint: (None, None)
 			on_release: app.open_settings()
-		Image:
-			source: 'logo.png'
-			size: self.texture_size
+	
