@@ -62,13 +62,13 @@ class drinkr(App):
         labels = root.ids
         print(labels)
         print(config)
-        idx = 0
+        idx = 1
         for labeled, label in labels.items():
 
             print(labeled)
             print(label)
             print(idx)
-            labels[label].text = self.config.get(idx,'text')
+            label.text = self.config.get(str(idx),'name')
             idx += 1
 
         return root
@@ -101,7 +101,7 @@ class drinkr(App):
                     })
     
     #at some point make a settings button and call this
-    def build_settings(settings):
+    def build_settings(self,settings):
         settings.add_json_panel('Settings', self.config, 'drinks.json')
 
     def on_config_change(self, config, section, key, value):
