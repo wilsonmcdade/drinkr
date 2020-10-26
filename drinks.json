@@ -1,4 +1,4 @@
-{
+[
 	{
 		"type": "title",
 		"title": "General"
@@ -77,4 +77,4 @@
 		"section": "4",
 		"key": "name"
 	}
-}
+]
