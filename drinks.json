@@ -62,19 +62,5 @@
 		"desc": "What comes out of pump 3?",
 		"section": "3",
 		"key": "name"
-	},
-	{
-		"type": "bool",
-		"title": "Pump 4 Enabled",
-		"desc": "Is pump 4 enabled?",
-		"section": "4",
-		"key": "enable"
-	},
-	{
-		"type": "string",
-		"title": "Pump 4 Name",
-		"desc": "What comes out of pump 4?",
-		"section": "4",
-		"key": "name"
 	}
 ]
